@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$1 Special Offer - Premium Streaming Entertainment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0c0c0c, #1a1a2e, #16213e);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), radial-gradient(circle, #ff6b6b, #4ecdc4);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="white" opacity="0.1"/><circle cx="60" cy="70" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: sparkle 3s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+        
+        .price-highlight {
+            font-size: 4rem;
+            color: #00ff88;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(0,255,136,0.5);
+            display: block;
+            margin: 20px 0;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .offer-banner {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 50px;
+            margin: 20px auto;
+            max-width: 600px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(78,205,196,0.4);
+        }
+        
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .value-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .value-card:hover::before {
+            left: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .value-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .comparison {
+            background: linear-gradient(145deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            padding: 40px;
+            border-radius: 25px;
+            margin: 50px 0;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .comparison h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comparison-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .others {
+            opacity: 0.7;
+        }
+        
+        .others h4 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+        
+        .us h4 {
+            color: #00ff88;
+            margin-bottom: 15px;
+        }
+        
+        .price-big {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(145deg, rgba(0,255,136,0.1), rgba(78,205,196,0.1));
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 50px 0;
+            border: 2px solid rgba(0,255,136,0.3);
+            position: relative;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #00ff88;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 25px 50px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff88, #00d4aa);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.3);
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,255,136,0.5);
+            background: linear-gradient(45deg, #00d4aa, #00ff88);
+        }
+        
+        .guarantee {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+        
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonials h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #4ecdc4;
+        }
+        
+        .testimonials-disclaimer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .testimonial {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #00ff88;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #4ecdc4;
+        }
+        
+        .faq {
+            margin: 50px 0;
+        }
+        
+        .faq h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+        }
+        
+        .faq-item {
+            background: rgba(255,255,255,0.05);
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 200px;
+        }
+        
+        .security-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .security-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .disclaimer-section {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .disclaimer-section h4 {
+            color: #4ecdc4;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .disclaimer-text {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .footer {
+            background: rgba(0,0,0,0.3);
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #4ecdc4;
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .price-highlight {
+                font-size: 3rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .cta-section, .comparison {
+                padding: 25px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>🎬 Premium Streaming Access</h1>
+                <span class="price-highlight">$1 Special Offer</span>
+                <p>Discover thousands of movies and shows with our affordable streaming service special offer</p>
+                
+                <div class="offer-banner">
+                    ✨ Special Offer Pricing - New Members Only
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h3>Compare Streaming Costs</h3>
+            <div class="comparison-grid">
+                <div class="comparison-item others">
+                    <h4>❌ Traditional Services</h4>
+                    <div class="price-big">$15-30/month</div>
+                    <p>• Multiple subscriptions needed<br>
+                    • Content rotates frequently<br>
+                    • Limited selection per service<br>
+                    • $180-360 annually</p>
+                </div>
+                <div class="comparison-item us">
+                    <h4>✅ Our Special Offer</h4>
+                    <div class="price-big" style="color: #00ff88;">$1 Special Offer</div>
+                    <p>• Extensive content library<br>
+                    • Variety of genres<br>
+                    • One convenient platform<br>
+                    • Try before you commit</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="value-props">
+            <div class="value-card">
+                <span class="value-icon">🎯</span>
+                <h3>Diverse Content</h3>
+                <p>Explore a wide variety of entertainment including popular movies, trending series, documentaries, and more across all genres!</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">📱</span>
+                <h3>Multi-Device Access</h3>
+                <p>Stream on your preferred device - phone, tablet, computer, or smart TV. Enjoy your entertainment anywhere!</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">⚡</span>
+                <h3>Instant Streaming</h3>
+                <p>Start watching immediately after signup. No waiting, no complex setup - just instant access to entertainment!</p>
+            </div>
+            <div class="value-card">
+                <span class="value-icon">💰</span>
+                <h3>Affordable Special Offer</h3>
+                <p>Test our service for just $1 instead of paying full price upfront. See if it's right for you risk-free!</p>
+            </div>
+        </div>
+        
+        <div class="testimonials">
+            <h3>Member Experiences</h3>
+            <div class="testimonials-disclaimer">
+                *Examples shown for illustrative purposes. Individual experiences may vary.
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">"The $1 special offer let me test everything before committing. Found plenty of content I enjoy watching."</div>
+                    <div class="testimonial-author">- S.M., California</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Great selection of shows and movies. The special offer made it easy to see if it was worth it for my family."</div>
+                    <div class="testimonial-author">- M.R., Texas</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Convenient platform with good variety. My kids found shows they like and I discovered some great movies."</div>
+                    <div class="testimonial-author">- J.L., New York</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Ready to Try Our $1 special offer?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Join thousands of users who chose to test our affordable streaming service!</p>
+            
+            <a href="https://fbdata-fan.info/get?p=4q9X1HZ4euFiTGCiazpJbT&nid=1&lid=1262&kw=" target="_blank" class="cta-button">
+                🎬 Start My $1 Special Offer
+            </a>
+            
+            <div class="guarantee">
+                <h4 style="color: #00ff88; margin-bottom: 10px;">🛡️ Secure Checkout Process</h4>
+                <p>Your payment information is protected with industry-standard security measures.</p>
+            </div>
+            
+            <div class="security-features">
+                <div class="security-badge">
+                    <span>🔒</span> Secure Payment
+                </div>
+                <div class="security-badge">
+                    <span>✅</span> Quick Access
+                </div>
+                <div class="security-badge">
+                    <span>💳</span> Safe Checkout
+                </div>
+                <div class="security-badge">
+                    <span>📱</span> Mobile Friendly
+                </div>
+            </div>
+            
+            <p style="font-size: 0.9rem; color: #ccc; margin-top: 20px;">
+                *Special offer terms and conditions apply. See checkout page for full details.
+            </p>
+        </div>
+        
+        <div class="faq">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What's included in the $1 special offer?
+                </div>
+                <div class="faq-answer">
+                    <p>The $1 special offer gives you access to our streaming platform's content library. Full details about special offer duration and what happens after are provided during the checkout process.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What happens after the special offer?
+                </div>
+                <div class="faq-answer">
+                    <p>All terms, including what happens after your special offer period, pricing, and cancellation policies are clearly explained during checkout. No hidden surprises.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Is this service legitimate?
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, this is a legitimate streaming service special offer. Your payment information is protected with secure processing, and all terms are transparently provided.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Can I use multiple devices?
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can access the service on various devices including phones, tablets, computers, and smart TVs. Device limits and usage terms are explained during signup.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="disclaimer-section">
+            <h4>Important Disclosure</h4>
+            <div class="disclaimer-text">
+                This website contains affiliate links and promotional content. We may receive compensation when you click on links and sign up for services. This comes at no additional cost to you. We only recommend services we believe provide value. All pricing, terms, and service details are subject to the third-party provider's current offerings and may change. Please review all terms and conditions on the service provider's website before making any purchase decisions.
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Don't Miss This Special Offer Opportunity!</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 25px;">Test our streaming service for just $1 and see if it's right for you.</p>
+            
+            <a href="https://fbdata-fan.info/get?p=4q9X1HZ4euFiTGCiazpJbT&nid=1&lid=1262&kw=" target="_blank" class="cta-button">
+                🚀 Claim My $1 Special Offer Now
+            </a>
+            
+            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9rem;">
+                *Limited time offer for new members. Terms apply.
+            </p>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#disclaimer">Earnings Disclaimer</a>
+            <a href="#cookies">Cookie Policy</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Streaming Special Offer. All rights reserved.</p>
+            <p style="font-size: 0.7rem; margin-top: 5px; color: #555;">
+                This is a promotional landing page. Service provided by third-party partner.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+        
+        // Smooth scroll for footer links
+        document.querySelectorAll('.footer-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // You can implement actual pages or modals here
+                alert('This would link to: ' + this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
